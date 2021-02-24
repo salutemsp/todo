@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3em;
+}
+
+hr {
+  height: 1px;
+  background: rgb(78, 80, 80);
+}
+.container {
+  margin: auto;
+
+  width: 45%;
+  height: 500px;
+}
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20%;
+  justify-content: center;
+  font-size: 1.5em;
+}
+
+.inputs {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.text {
+  width: 80%;
+  height: 30px;
+  border-radius: 8px;
+  border: solid 1px gray;
+}
+.add {
+  width: 20%;
+  border-radius: 8px;
+  background: rgb(70, 135, 255);
+  color: rgb(255, 255, 255);
+  border: 0px;
+}
+.add:hover {
+  background: rgb(6, 8, 6);
+  color: rgb(70, 135, 255);
+  transition: all 100ms ease-in-out;
+}
+.add:active {
+  background: rgb(56, 230, 230);
+  color: rgb(2, 1, 1);
+}
+.todo ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  font-size: 1.2em;
+}
+.todo input {
+  margin-right: 20px;
+}
+.todo li {
+  margin: 5px 0px;
+}

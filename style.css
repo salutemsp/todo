@@ -66,3 +66,9 @@ hr {
 .todo li {
   margin: 5px 0px;
 }
+.strikestrough {
+  text-decoration: line-through;
+}
+.hidden {
+  display: none;
+}

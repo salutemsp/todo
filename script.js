@@ -10,42 +10,37 @@ const todoList = {
 };
 
 const addTodo = function () {
+  //get the inputted text of the user
   const todo = inputText.value;
-  //create an input element
-  const check = document.createElement("input");
-  //set the type of created input into checkbox
-  check.setAttribute("type", "checkbox");
-  check.setAttribute("class", "checkbox");
-  //create a li element
-  const li = document.createElement("li");
-  li.setAttribute("class", "active");
-  //create a text node from the inputed text
-  const text = document.createTextNode(todo);
 
-  //append the checkbox into the li element[]
-  li.appendChild(check);
-  //append the textnode into the li
-  li.appendChild(text);
+  //creates a function to toggles the claslist of the dos
+  const toggle = function () {
+    dos.classList.toggle("strikestrough");
+    dos.classList.toggle("active");
+    dos.classList.toggle("completed");
+  };
 
-  //append the li into the list (the ul element containing the todos)
+  //html to be created via insertAdjacent
+  const html = `<li class="dos active"><input class="checkbox" type="checkbox" />${todo}</li>`;
 
-  todoList.active.push(todoList.active.length + 1);
-  list.appendChild(li);
+  //insert the html
+  list.insertAdjacentHTML("afterbegin", html);
 
-  const checkcb = function () {
-    if (check.checked == true) {
-      li.classList.toggle("strikestrough");
-      li.classList.toggle("active");
-      li.classList.toggle("complete");
+  //get the checkbox and li element from the created html
+  const checkbox = document.querySelector(".checkbox");
+  const dos = document.querySelector(".dos");
+
+  //check if the checkbox is checked then run the toggle function
+  const ifChecked = function () {
+    if (checkbox.checked == true) {
+      toggle();
     } else {
-      li.classList.toggle("strikestrough");
-      li.classList.toggle("active");
-      li.classList.toggle("complete");
+      toggle();
     }
   };
 
-  console.log(list);
-  check.addEventListener("click", checkcb);
+  //click event for checkbox
+  checkbox.addEventListener("click", ifChecked);
 };
 
 buttonAdd.addEventListener("click", addTodo);

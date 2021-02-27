@@ -3,6 +3,9 @@
 const inputText = document.querySelector(".text");
 const buttonAdd = document.querySelector(".add");
 const list = document.querySelector(".list");
+const navAll = document.querySelector(".nav_all");
+const navCompleted = document.querySelector(".nav_completed");
+const navActive = document.querySelector(".nav_active");
 
 const todoList = {
   active: [],
@@ -18,6 +21,7 @@ const addTodo = function () {
     dos.classList.toggle("strikestrough");
     dos.classList.toggle("active");
     dos.classList.toggle("completed");
+    dos.classList.add("hidden");
   };
 
   //html to be created via insertAdjacent
@@ -44,3 +48,47 @@ const addTodo = function () {
 };
 
 buttonAdd.addEventListener("click", addTodo);
+
+let activeNav = "active";
+const filterTodo = function (state) {
+  let i = 0;
+  let doActive = document.getElementsByClassName("active");
+  let doCompleted = document.getElementsByClassName("completed");
+  if (state === "active") {
+    for (const val of doActive) {
+      val.classList.remove("hidden");
+    }
+    for (const val of doCompleted) {
+      val.classList.add("hidden");
+    }
+  } else if (state === "completed") {
+    for (const val of doActive) {
+      val.classList.add("hidden");
+    }
+    for (const val of doCompleted) {
+      val.classList.remove("hidden");
+    }
+  } else {
+    for (const val of doCompleted) {
+      val.classList.remove("hidden");
+    }
+    for (const val of doActive) {
+      val.classList.remove("hidden");
+    }
+  }
+};
+
+navActive.addEventListener("click", function (e) {
+  activeNav = "active";
+  filterTodo(activeNav);
+});
+navCompleted.addEventListener("click", function (e) {
+  activeNav = "completed";
+
+  filterTodo(activeNav);
+});
+navAll.addEventListener("click", function (e) {
+  activeNav = "all";
+
+  filterTodo(activeNav);
+});

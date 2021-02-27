@@ -24,7 +24,13 @@ hr {
   justify-content: center;
   font-size: 1.5em;
 }
+.nav li {
+  cursor: pointer;
+}
 
+.nav li:hover {
+  color: aqua;
+}
 .inputs {
   margin-top: 20px;
   display: flex;

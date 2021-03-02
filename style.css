@@ -60,6 +60,7 @@ hr {
   background: rgb(56, 230, 230);
   color: rgb(2, 1, 1);
 }
+
 .todo ul {
   list-style: none;
   margin: 0px;
@@ -72,8 +73,36 @@ hr {
 .todo li {
   margin: 5px 0px;
 }
+
+.todo .trash {
+  display: block;
+  margin-left: auto;
+}
+.todo .trash:hover {
+  color: aqua;
+  cursor: pointer;
+}
 .strikestrough {
   text-decoration: line-through;
+}
+
+.hideIcon {
+  opacity: 0%;
+}
+
+.deleteAll {
+  display: block;
+  margin-left: auto;
+  border-radius: 8px;
+  background: rgb(255, 70, 86);
+  color: rgb(255, 255, 255);
+  border: 0px;
+  margin-top: 30px;
+}
+.deleteAll:hover {
+  background: rgb(6, 8, 6);
+  color: rgb(255, 70, 86);
+  transition: all 100ms ease-in-out;
 }
 .hidden {
   display: none;
